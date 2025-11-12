@@ -98,4 +98,21 @@ for ds_cnt, ds in enumerate(datasets):
 
         Z = Z.reshape(xx.shape)
         ax.contourf(xx, yy, Z, cmap=cm, alpha=.8)
-        
+        ax.scatter(X_train[:, 0], X_train[:, 1], c=y_train,
+                   cmap=cm_bright, edgecolors='k')
+        ax.scatter(X_test[:, 0], X_test[:, 1], c=y_test,
+                   cmap=cm_bright, edgecolors='k', alpha=0.6)
+
+        ax.set_xlim(xx.min(), xx.max())
+        ax.set_ylim(yy.min(), yy.max())
+        ax.set_xticks(())
+        ax.set_yticks(())
+        if ds_cnt == 0:
+            ax.set_title(name)
+        ax.text(xx.max()-.3, yy.min()+.3, ('%.2f' % score).lstrip('0'),
+                size=15, horizontalalignment='right')
+        i += 1
+
+plt.tight_layout()
+plt.show()
+
