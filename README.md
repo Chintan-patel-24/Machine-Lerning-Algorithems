@@ -1,4 +1,8 @@
+<div align=center>
+
 # Machine Learning Algorithms
+
+</div>
 
 Some of the most important machine learning algorithms are implemented here:
 
